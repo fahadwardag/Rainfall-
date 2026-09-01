@@ -4,8 +4,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import streamlit as st 
-import joblib
+import streamlit as st
 
 # Safe import for XGBoost
 try:
@@ -77,7 +76,6 @@ models = load_models()
 # -------------------------------------------------
 st.sidebar.title("🌧️ Navigation")
 
-# Unique key added to prevent DuplicateElementId error
 page = st.sidebar.radio(
     "Go to", 
     ["Overview & Data", "Make Prediction", "Model Evaluation & Metrics"],
@@ -158,7 +156,7 @@ elif page == "Make Prediction":
     st.markdown("Adjust environmental variables below to compute real-time runoff forecasts.")
 
     if not models:
-        st.error("No loaded models found. Please train models first.")
+        st.error("No loaded models found. Please upload trained `.pkl` models.")
     else:
         selected_model_name = st.selectbox("Select Model for Prediction", list(models.keys()))
         active_model = models[selected_model_name]
