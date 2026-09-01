@@ -1,6 +1,0 @@
-rainfall-project/
-│
-├── app.py
-├── requirements.txt
-├── model.pkl
-└── your_dataset.csv
